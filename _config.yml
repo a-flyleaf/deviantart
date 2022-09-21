@@ -1,0 +1,11 @@
+name: a-flyleaf.deviantart
+collections:
+    da-posts:
+        output: true
+    gallery:
+        output: true
+defaults:
+  - scope:
+      path: "_da-posts"
+    values:
+      layout: none
