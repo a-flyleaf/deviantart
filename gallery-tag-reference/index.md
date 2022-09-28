@@ -1,7 +1,7 @@
 ---
 layout: txt
 title: gallery tag reference
-css: .tag{text-transform:lowercase;}
+css: "a{text-underline-offset:.15em;} /*main*/ a{font-weight:normal; text-decoration-color:#adb9ae;} /*footer a{text-decoration-color:#95a397;}*/ .tag{text-transform:lowercase; font-weight:bold;} aside{font-size:.85em;} main>p:last-child{margin-bottom:0; text-align:center;} h2{font-size:1.5em; margin-top:1.5em;} h2+p{margin-top:.25em;} h3+p,h3+ul{margin-top:0;} h3{font-size:1.25em;} h2 span{text-transform:uppercase;} li{margin:.25em 0;} li>ul{margin-bottom:.5em;} body{background:#dae5d6;} footer{color:#22272b;} footer a:hover,footer a:active,footer a:focus{opacity:.5;}"
 
 tags:
   projects:
@@ -109,10 +109,11 @@ tags:
 ---
 Because [my gallery](https://www.deviantart.com/a-flyleaf/gallery) is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of ’em <span style="display:inline-block;">\o/</span>
 
-(As for why I'm using an offsite thing instead of the original journal entry? Editing it (and tracking all the changes, as I like to do) was a pain :V)
+<aside>(As for why I'm using an offsite thing instead of the original journal entry? Editing it (and tracking all the changes) was a hassle :V The magic of coding is that I can make stuff like this a billion times easier.)</aside>
 
-If the descriptions seem unnecessarily detailed it's because I confuse myself on what goes where a lot; this is a "guide" for me as much as anyone else <span style="display:inline-block;">:P</span>
+If the descriptions seem unnecessarily detailed it's because I confuse myself on what goes where a lot; this is a guide for me as much as anyone else <span style="display:inline-block;">:P</span>
 
+<section id="subject" markdown="1">
 ## by <span>subject</span>
 Some people and other critters that show up a lot, original and otherwise.
 
@@ -127,9 +128,10 @@ Some people and other critters that show up a lot, original and otherwise.
 ### giant canvas collages
 Compilations of some sort. Some things got uploaded achronologically, which makes the tag order weird; see [the sub-gallery](https://www.deviantart.com/a-flyleaf/gallery/81345929/compilation-stuff) for everything arranged proper.
 
-<ul>{%for tag in page.tags.comp%}<li><b>#<a href="https://www.deviantart.com/a-flyleaf/gallery?q=%23{{tag.nm|downcase}}" class="tag">{{tag.nm}}</a></b>{%if tag.desc%}{%if tag.desc%} {{tag.desc}}{%endif%}{%endif%}</li>{%endfor%}</ul>
+<ul>{%for tag in page.tags.comp%}<li><b>#<a href="https://www.deviantart.com/a-flyleaf/gallery?q=%23{{tag.nm|downcase}}" class="tag">{{tag.nm}}</a></b>{%if tag.desc%}: {{tag.desc}}{%endif%}</li>{%endfor%}</ul>
 
-Art *in* sketchdumps/roundups/summaries may or may not be tagged for individually (i.e. Zero appears in one little doodle in a roundup; whether the roundup is tagged #zero depends entirely on my memory at the time), I am not consistent with it. Maybe someday ¯\\\_(ツ)_/¯
+Art *in* sketchdumps/roundups/summaries may or may not be tagged for individually (i.e.&nbsp;Zero appears in one little doodle in a roundup; whether the roundup is tagged #zero depends entirely on my memory at the time), I am not consistent with it. Maybe someday ¯\\\_(ツ)_/¯
+</section>
 
 ----
 

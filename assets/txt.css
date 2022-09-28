@@ -7,12 +7,12 @@ p{margin:1em 0;}
 ol,ul{margin:1em 0 1em 1.5em;}
 li>ul,li>ol{margin:0 0 0 1em;}
 ul{list-style-type:none;} li:before{content:"•"; color:#00c787; display:inline-block; width:1em; margin-left:-1em;} li>ul>li:before{content:"○"; font-size:.75em; width:1.5em; margin-left:-1.5em;}
-hr{background:#22272b; border:0; height:1px;}
+hr{background:#22272b; border:0; height:1px; margin:2em 0 1.75em;}
 
 #content{background:#e6ede4; margin:1em; padding:1em; border-radius:.5em; max-width:50em;}
 h1{font-size:2em; line-height:1.15;}
 
-footer{padding:0 1em .75em 1em; color:#e6ede4; text-align:right; max-width:50em; margin:0 auto;} footer a{font-weight:normal;} footer a:hover,footer a:focus,footer a:active{text-decoration:none; color:inherit;}
+footer{padding:0 1.15em 1em 1.15em; color:#e6ede4; text-align:right; max-width:61.6em; margin:0 auto; font-size:.85em;} footer a{font-weight:normal;} footer a:hover,footer a:focus,footer a:active{text-decoration:none; color:inherit;}
 
 @media only screen and (min-width:52em){
 	body{padding:2em 0;}
