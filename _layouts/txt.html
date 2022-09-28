@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>{%if page.title%}{{page.title}} • {%endif%}NightAuctor/a-flyleaf on deviantArt, but not on deviantArt</title>
+		<link rel="stylesheet" type="text/css" href="{%include url.html%}/assets/txt.css"/>{%if page.css%}
+		<style>{{page.css}}</style>{%endif%}
+	</head>
+	<body>
+		<div id="content">{%if page.title%}
+			<header><h1>{{page.title}}</h1></header>{%endif%}
+			<main>{{content}}</main>
+		</div>
+		<footer><a href="https://github.com/a-flyleaf/deviantart/commits/master/{{page.path}}">changelog</a> | by a-flyleaf/NightAuctor</footer>
+	</body>
+</html>

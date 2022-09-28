@@ -1,4 +1,6 @@
 ---
+layout: txt
+title: gallery tag reference
 css: .tag{text-transform:lowercase;}
 
 tags:
@@ -105,9 +107,9 @@ tags:
     - nm: website
       desc: also redundant, idek; sometimes these deviations are essentially a webpage ad
 ---
-<!--for testing purposes TBD--><style>{{page.css}}</style>
+Because [my gallery](https://www.deviantart.com/a-flyleaf/gallery) is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of ’em <span style="display:inline-block;">\o/</span>
 
-Because my gallery is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of ’em <span style="display:inline-block;">\o/</span>
+(As for why I'm using an offsite thing instead of the original journal entry? Editing it (and tracking all the changes, as I like to do) was a pain :V)
 
 If the descriptions seem unnecessarily detailed it's because I confuse myself on what goes where a lot; this is a "guide" for me as much as anyone else <span style="display:inline-block;">:P</span>
 
@@ -151,5 +153,3 @@ There's also <a href="https://www.deviantart.com/a-flyleaf/gallery?q=%23untagged
 ----
 
 *A'ight enough of that*. Head [back to the gallery](https://www.deviantart.com/a-flyleaf/gallery/all)~
-
-[note in footer]see GitHub for changelog
