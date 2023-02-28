@@ -40,6 +40,8 @@ tags:
   notmine:
     - nm: forXYZ
       desc: gifts, commissions, trades
+    - nm: omori
+      desc: has taken over my life as of 2023
     - nm: FlightRising
       desc: <a href='https://www1.flightrising.com/'>dragon hell</a>, intermittent since 2015
     - nm: ena
@@ -97,17 +99,17 @@ tags:
       desc: love me some loose lines
   misc:
     - nm: forxyz
-      desc: redundant but why not
+      desc: has already been listed above but why not
     - nm: icon
       desc: art that I used as my dA icon at some point, although I forgot what the very first one was….
     - nm: redraw
       desc: revisiting my own stuff; both old and new versions are tagged
     - nm: tumblrLink
-      desc: because a lot of these links are broken and at some point I need to figure out how to handle them
+      desc: because a lot of these links are broken and at some point I need to figure out what to do with them
     - nm: website
-      desc: also redundant, idek; sometimes these deviations are essentially a webpage ad
+      desc: also listed before, idek; sometimes these deviations are essentially a webpage ad
 ---
-Because [my gallery](https://www.deviantart.com/a-flyleaf/gallery) is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of ’em <span style="display:inline-block;">\o/</span>
+Because [my gallery](https://www.deviantart.com/a-flyleaf/gallery) is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of tags <span style="display:inline-block;">\o/</span>
 
 <aside>(As for why I'm using an offsite thing instead of the original journal entry? Editing it (and tracking all the changes) was a hassle :V The magic of coding is that I can make stuff like this a billion times easier.)</aside>
 
