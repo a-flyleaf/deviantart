@@ -9,19 +9,19 @@ layout: none
 		th{text-align:left;}
 		.odd{background:#efefef;} .even{background:#f7f7f7;}
 		td{vertical-align:top;}
+		.empty{background:rgba(128,128,128,.25);}
 		
-		.title,.date,.tags{max-width:10em;}
-		.title{font-weight:bold;}
-		pre{max-width:10em; overflow-x:scroll; margin-top:0;}
+		.link-title,.date,.tags{max-width:10em;}
+		pre{max-width:10em; overflow-x:scroll; margin-top:0; color:rgba(0,0,0,.25);}
 		.title,.desc-html{font-family:verdana,sans-serif; font-size:.75em;}
 		
-		.d-new{color:green;} .empty-p{height:0;} li p{margin:.5em;}
+		.d-new{color:green;} .empty-p{height:0;} li p{margin:.5em;} .d-new p:first-child{margin-top:0;} .d-new p:last-child{margin-bottom:0;}
 	</style>
 </head>
 <body>
 	<p>lord have mercy. <b>{{site.data.gallery|size}}</b> and counting....</p>
 	
-	<p>links open in new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
+	<p>title links open in a new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
 	
 	<p><b>times are correct</b> & will display as EST on live site; localhost is weird (-4h) for some reason. dw about it.</p>
 	
@@ -29,15 +29,18 @@ layout: none
 	
 	<table>
 		<thead><tr>
-			<th>link</th>
-			<th>title</th>
+			<th>link, title</th>
 			<th>date</th>
 			<th>tags</th>
 			<th>desc (raw)</th>
 			<th>desc (HTML)</th>
+			<th>site</th>
 		</tr></thead><tbody>{%for d in site.data.gallery%}<tr class="{%cycle 'odd','even'%}">
-			<td class="link"><a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a></td>
-			<td class="title">{{d.title}}</td>
+			<td class="link-title">
+				<a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a>
+				<br><br>
+				<b>{{d.title}}</b>
+			</td>
 			<td class="date">
 				<pre>{{d.date|date_to_xmlschema}}</pre>
 				{{d.date|date:"%Y %b %-d, %T %Z"}}
@@ -51,6 +54,7 @@ layout: none
 				|remove:"https://www.deviantart.com/users/outgoing?"
 				|remove:"<h2>Description</h2>"
 			}}</td>
+			<td class="site{%unless d.site%} empty{%endunless%}"><a href="https://a-flyleaf.github.io/{{d.site}}">{{d.site}}</a></td>
 		</tr>{%endfor%}</tbody>
 	</table>
 </body>

@@ -1,3 +1,4 @@
+# 2022-09-21
 - post backup is NOT COMPREHENSIVE, memes and stream announcements and other little social things are ephemeral and if they disappeared into the internet void someday I wouldn't be too upset
 - that said I don't plan on making (m)any of them public, they're mostly just here for personal backup reasons. maybe someday I'll go back and snag em all but not today
 - data is "da-posts" as not to mess with jekyll's blog defaults
@@ -25,3 +26,9 @@
 	- monthly sketchdump/roundup poll: 2020 summary
 	- TIL FireAlpaca: preceding status (idk how to handle those links yet)
 	- Brand(TM): Slade links
+
+
+# 2025-02-09
+- journal/status backup can be INDEFINITELY faster using the same format as gallery backups: snipe the HTML, call it a day
+- as for actually generating pages, make like dragonotes: have a separate data folder, enter new descriptions there. lb-fucking-real I am NOT doing all 500+ again, ESPECIALLY a good chunk that frankly can just live on dA until their time is up (livestream relics, gifts for people I don't talk to anymore, that sort of thing). also I've started putting HD versions on my own site sooo
+- ^on which note: new column in the data sheet for elsewhere-on-my-site versions? yeah....
