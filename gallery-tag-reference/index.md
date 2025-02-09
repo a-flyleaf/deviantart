@@ -12,9 +12,9 @@ tags:
     - nm: TheFirebirdEffect
       desc: Catch-all for a nuzlocke-inspired pokémon comic, active 2016–17. Discontinued; see <a href='https://a-flyleaf.github.io/projects/tfe/'>its site page</a> for the full comic & more info.
     - nm: 404
-      desc: An experimental web-based narrative, <a href='https://a-flyleaf.github.io/hello-world/'>launched 2020</a>. No solid plans to do more with it as of 2022, but definitely not <em>done</em> with it either…
+      desc: An experimental web-based narrative, <a href='https://a-flyleaf.github.io/hello-world/'>launched 2020</a>. No solid plans to do more with it as of 2022.
     - nm: unmooredRandos
-      desc: Current story project <a href='https://a-flyleaf.github.io/ygbtdm/'><i>You’re gonna be the death of me</i></a>; it didn’t have a name for a few months there, no. Major site art is tagged with <a href='https://www.deviantart.com/a-flyleaf/gallery?q=%23ygbtdm'>the acronym</a>.
+      desc: Catch-all for <a href='https://a-flyleaf.github.io/ygbtdm/'><i>You’re gonna be the death of me</i></a> (which didn’t have a name for a few months there, no). Major site art is tagged with <a href='https://www.deviantart.com/a-flyleaf/gallery?q=%23ygbtdm'>the acronym</a>.
   ocs:
     - nm: RPstuff
       desc: RP characters in general; mostly one-offs
@@ -38,14 +38,15 @@ tags:
     - nm: creatures
       desc: miscellaneous monsters, Flight Rising dragons (see below) not included
   notmine:
+#		#forXYZ, reverse-chronological, then #miscFanart. I can probably re-sort these (and revamp the backend of this page in general but WAVES VAGUELY. NEW VERSION WHENEVER.
     - nm: forXYZ
       desc: gifts, commissions, trades
-    - nm: omori
-      desc: has taken over my life as of 2023
     - nm: FlightRising
       desc: <a href='https://www1.flightrising.com/'>dragon hell</a>, intermittent since 2015
+    - nm: omori
+      desc: took over my life c. 2023–24
     - nm: ena
-      desc: 2021 hyperfixation that may or may not come back
+      desc: 2021 hyperfixation
     - nm: StevenUniverse
       desc: space rock obsession c. 2015–16
     - nm: pokemon
@@ -67,7 +68,7 @@ tags:
     - nm: 3d
       desc: <a href='https://www.blender.org/'>Blender</a> is a wonderful program
     - nm: animation
-      desc: either gifs or with a video linked in the description
+      desc: either gifs or description-linked videos
     - nm: comic
       desc: entirety of <i>TFE</i> not included
     - nm: edit
@@ -103,7 +104,7 @@ tags:
     - nm: icon
       desc: art that I used as my dA icon at some point, although I forgot what the very first one was….
     - nm: redraw
-      desc: revisiting my own stuff; both old and new versions are tagged
+      desc: revisiting my own stuff; both old and new versions get this tag
     - nm: tumblrLink
       desc: because a lot of these links are broken and at some point I need to figure out what to do with them
     - nm: website
@@ -111,9 +112,9 @@ tags:
 ---
 Because [my gallery](https://www.deviantart.com/a-flyleaf/gallery) is sorted almost exclusively in reverse-chronological order, I use tags to actually categorize things. Lots and lots of tags <span style="display:inline-block;">\o/</span>
 
-<aside>(As for why I'm using an offsite thing instead of the original journal entry? Editing it (and tracking all the changes) was a hassle :V The magic of coding is that I can make stuff like this a billion times easier.)</aside>
+<aside>(As for why I'm using an offsite page instead of, say, a journal entry? Editing it (and tracking all the changes) was a hassle :V The magic of coding is that I can make stuff like this a billion times easier.)</aside>
 
-If the descriptions seem unnecessarily detailed it's because I confuse myself on what goes where a lot; this is a guide for me as much as anyone else <span style="display:inline-block;">:P</span>
+If the descriptions seem unnecessarily detailed, it's because I confuse myself on what goes where a lot. This is a guide for me as much as anyone else <span style="display:inline-block;">:P</span>
 
 <section id="subject" markdown="1">
 ## by <span>subject</span>
