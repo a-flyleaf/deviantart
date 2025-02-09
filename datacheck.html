@@ -14,6 +14,8 @@ layout: none
 		.title{font-weight:bold;}
 		pre{max-width:10em; overflow-x:scroll; margin-top:0;}
 		.title,.desc-html{font-family:verdana,sans-serif; font-size:.75em;}
+		
+		.d-new{color:green;} .empty-p{height:0;} li p{margin:.5em;}
 	</style>
 </head>
 <body>
@@ -22,6 +24,8 @@ layout: none
 	<p>links open in new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
 	
 	<p><b>times are correct</b> & will display as EST on live site; localhost is weird (-4h) for some reason. dw about it.</p>
+	
+	<p>"legacy-journal" has been retroactively applied to <em>all descriptions</em> before ~2024 (starts here with "roundup 2023/02"). I know for a FACT I have HTML in some of the newer descriptions but dA does not reflect this. big F.</p>
 	
 	<table>
 		<thead><tr>
@@ -43,7 +47,7 @@ layout: none
 				|replace:"<","&lt;"
 				|replace:">","&gt;"
 			}}</pre></td>
-			<td class="desc-html">{{d.desc
+			<td class="desc-html{%if d.desc contains '</p>'%} d-new{%endif%}">{{d.desc
 				|remove:"https://www.deviantart.com/users/outgoing?"
 				|remove:"<h2>Description</h2>"
 			}}</td>
