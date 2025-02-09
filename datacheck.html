@@ -10,9 +10,10 @@ layout: none
 		.odd{background:#efefef;} .even{background:#f7f7f7;}
 		td{vertical-align:top;}
 		
-		.date,.tags{max-width:10em;}
-		pre{max-width:10em; overflow-x:scroll;}
-		.desc2{font-family:verdana,sans-serif; font-size:.75em;}
+		.title,.date,.tags{max-width:10em;}
+		.title{font-weight:bold;}
+		pre{max-width:10em; overflow-x:scroll; margin-top:0;}
+		.title,.desc-html{font-family:verdana,sans-serif; font-size:.75em;}
 	</style>
 </head>
 <body>
@@ -20,27 +21,29 @@ layout: none
 	
 	<p>links open in new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
 	
-	<p><b style="background:yellow;">unsure why time zone looks amiss</b>; it's <a href="https://stackoverflow.com/questions/16151383/what-does-the-000z-of-yyyy-mm-ddt000000-000z-mean">UTC-4</a> in the data, which <a href="https://en.wikipedia.org/wiki/UTC%E2%88%9204%3A00">IS local/EST</a>. may just be localhost weirdness? I'll see how it displays on the live site....</p>
+	<p><b>times are correct</b> & will display as EST on live site; localhost is weird (-4h) for some reason. dw about it.</p>
 	
 	<table>
 		<thead><tr>
 			<th>link</th>
+			<th>title</th>
 			<th>date</th>
 			<th>tags</th>
 			<th>desc (raw)</th>
 			<th>desc (HTML)</th>
 		</tr></thead><tbody>{%for d in site.data.gallery%}<tr class="{%cycle 'odd','even'%}">
-			<td><a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a></td>
+			<td class="link"><a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a></td>
+			<td class="title">{{d.title}}</td>
 			<td class="date">
 				<pre>{{d.date|date_to_xmlschema}}</pre>
 				{{d.date|date:"%Y %b %-d, %T %Z"}}
 			</td>
 			<td class="tags">[{%for t in d.tags%}{{t}}{%if forloop.last!=true%}, {%endif%}{%endfor%}]</td>
-			<td><pre>{{d.desc
+			<td class="desc"><pre>{{d.desc
 				|replace:"<","&lt;"
 				|replace:">","&gt;"
 			}}</pre></td>
-			<td class="desc2">{{d.desc
+			<td class="desc-html">{{d.desc
 				|remove:"https://www.deviantart.com/users/outgoing?"
 				|remove:"<h2>Description</h2>"
 			}}</td>
