@@ -1,0 +1,44 @@
+---
+layout: none
+---
+<!doctype html><html>
+<head>
+	<title>/deviantart datacheck</title>
+	<style>
+		table{font-family:monospace;}
+		th{text-align:left;}
+		.odd{background:#efefef;} .even{background:#f7f7f7;}
+		td{vertical-align:top;}
+		
+		.date,.tags{max-width:10em;}
+		pre{max-width:10em; overflow-x:scroll;}
+		.desc2{font-family:verdana,sans-serif; font-size:.75em;}
+	</style>
+</head>
+<body>
+	<p>lord have mercy. <b>{{site.data.gallery|size}}</b> and counting....</p>
+	
+	<p>links open in new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
+	
+	<table>
+		<thead><tr>
+			<th>link</th>
+			<th>date</th>
+			<th>tags</th>
+			<th>desc (raw)</th>
+			<th>desc (HTML)</th>
+		</tr></thead><tbody>{%for d in site.data.gallery%}<tr class="{%cycle 'odd','even'%}">
+			<td><a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a></td>
+			<td class="date">{{d.date|date_to_xmlschema}}</td>
+			<td class="tags">[{%for t in d.tags%}{{t}}{%if forloop.last!=true%}, {%endif%}{%endfor%}]</td>
+			<td><pre>{{d.desc
+				|replace:"<","&lt;"
+				|replace:">","&gt;"
+			}}</pre></td>
+			<td class="desc2">{{d.desc
+				|remove:"https://www.deviantart.com/users/outgoing?"
+				|remove:"<h2>Description</h2>"
+			}}</td>
+		</tr>{%endfor%}</tbody>
+	</table>
+</body>
