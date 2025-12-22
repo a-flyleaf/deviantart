@@ -1,0 +1,32 @@
+---
+layout: none
+---
+<!doctype html><html>
+<head>
+	<title>/deviantArt timeline</title>
+	<style>
+		table{font-family:monospace;}
+		thead{text-align:left;}
+		a{color:inherit;}
+	</style>
+</head>
+<body>	
+	<h1><a href="{%include url.html%}">deviantArt</a>/timeline</a></h1>
+	<p>quick n ugly for now</p>
+
+	{%assign all=site.data.gallery|concat:site.data.posts|sort:"date"%}
+	<table>
+		<thead><tr>
+			<th>date</th>
+			<th>link</th>
+			<th>type</th>
+		</tr></thead><tbody>{%for d in all%}<tr>
+			<td>{{d.date|date:"%F %T"}}</td>
+			<td><a href="https://www.deviantart.com/a-flyleaf/{{d.link}}">{%unless d.type%}<b>{%endunless%}{%if d.title%}{{d.title}}{%else%}{{d.link
+				|remove:"journal/"
+				|remove:"poll/"
+				|remove:"status-update/"}}{%endif%}{%unless d.type%}</b>{%endunless%}</a></td>
+			<td>{%if d.type%}{{d.type}}{%else%}deviation{%endif%}</td>
+		</tr>{%endfor%}</tbody>
+	</table>
+</body></html>
