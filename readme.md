@@ -1,3 +1,3 @@
 Ohai thar :V
 
-This is mainly [a gallery tag reference](gallery-tag-reference) for now. Maybe other things will go here someday.
+This mainly exists for [a gallery tag reference](gallery-tag-reference), but data for the actual uploads has been backed up also. Stay tuned...?

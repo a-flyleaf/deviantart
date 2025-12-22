@@ -5,6 +5,9 @@ layout: none
 <head>
 	<title>/deviantart datacheck</title>
 	<style>
+		.comment{font-family:consolas,monospace; font-size:.85em; line-height:1.425;}
+		.comment li{margin:.25em 0; max-width:70em;}
+		
 		details{margin:0 0 1em;}
 		summary{border:1px solid #9f9f9f; cursor:pointer; padding:.25em 1em .5em;} summary:hover{background:#f7f7f7;}
 		summary h2{display:inline;}
@@ -29,7 +32,16 @@ layout: none
 </head>
 <body>
 	<h1><a href="{%include url.html%}">deviantart</a>/datacheck</h1>
-	<details open><summary><h2>_data/posts.yml</h2></summary><div class="dt">
+	<ul>
+		<li>dates are EST as shown onsite; YYYY-MM-DD HH:MM</li>
+		<li>eclipse kicked in at some point in 2019/2020, after which <code>_da-posts</code> uses markdown</li>
+		<li><code>_da-posts</code> Exists but is now redundant; saving it in case I want the footnotes and/or nicely-massaged text content for whatever reason</li>
+	</ul><ul class="comment">
+		<li><b>2025-02-09</b>: as for actually generating pages, make like dragonotes: have a separate data folder, enter new descriptions there. lb-fucking-real I am NOT doing all 500+ again, ESPECIALLY a good chunk that frankly can just live on dA until their time is up (livestream relics, gifts for people I don't talk to anymore, that sort of thing). also I've started putting HD versions on my own site sooo</li>
+		<li><b>2025-12-21</b>: on further thought ^that still checks out. current thought is to make some sort of like.. overall timeline that concats all the dates & links to the sources from there, but if there's a Special Custom Site Page for a deviation (for anything & everything I have linked elsewhere on GitHub) then note & link that. in <em>addition to</em> the OG, not in place of!!</li>
+	</ul>
+	
+	<details><summary><h2>_data/posts.yml</h2></summary><div class="dt">
 		<p>_da-posts Exists but like. no. it's 81+ infobits I ain't copying all that manually again</p>
 		
 		<table>
