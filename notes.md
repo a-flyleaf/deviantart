@@ -31,4 +31,3 @@
 # 2025-02-09
 - journal/status backup can be INDEFINITELY faster using the same format as gallery backups: snipe the HTML, call it a day
 - as for actually generating pages, make like dragonotes: have a separate data folder, enter new descriptions there. lb-fucking-real I am NOT doing all 500+ again, ESPECIALLY a good chunk that frankly can just live on dA until their time is up (livestream relics, gifts for people I don't talk to anymore, that sort of thing). also I've started putting HD versions on my own site sooo
-- ^on which note: new column in the data sheet for elsewhere-on-my-site versions? yeah....

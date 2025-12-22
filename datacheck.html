@@ -5,6 +5,11 @@ layout: none
 <head>
 	<title>/deviantart datacheck</title>
 	<style>
+		details{margin:0 0 1em;}
+		summary{border:1px solid #9f9f9f; cursor:pointer; padding:.25em 1em .5em;} summary:hover{background:#f7f7f7;}
+		summary h2{display:inline;}
+		.dt{border-bottom:2px solid #bfbfbf; padding:0 1em 1em;}
+		
 		table{font-family:monospace;}
 		th{text-align:left;}
 		.odd{background:#efefef;} .even{background:#f7f7f7;}
@@ -12,49 +17,105 @@ layout: none
 		.empty{background:rgba(128,128,128,.25);}
 		
 		.link-title,.date,.tags{max-width:10em;}
-		pre{max-width:10em; overflow-x:scroll; margin-top:0; color:rgba(0,0,0,.25);}
-		.title,.desc-html{font-family:verdana,sans-serif; font-size:.75em;}
+		pre{max-width:7em; overflow-x:scroll; margin-top:0; color:rgba(0,0,0,.25);}
+			.writ pre{color:inherit; max-width:5em;}
+		.title,.prev{font-family:verdana,sans-serif; font-size:.75em;}
 		
 		.d-new{color:green;} .empty-p{height:0;} li p{margin:.5em;} .d-new p:first-child{margin-top:0;} .d-new p:last-child{margin-bottom:0;}
+		
+		.poll{font-family:monospace; font-size:1em;} .poll li{margin:.25em 0;}
+		.cmt{max-width:10em; word-wrap:break-word;} .cmt .prev{max-height:5em; overflow-y:scroll;}
 	</style>
 </head>
 <body>
-	<p>lord have mercy. <b>{{site.data.gallery|size}}</b> and counting....</p>
+	<h1><a href="{%include url.html%}">deviantart</a>/datacheck</h1>
+	<details open><summary><h2>_data/posts.yml</h2></summary><div class="dt">
+		<p>_da-posts Exists but like. no. it's 81+ infobits I ain't copying all that manually again</p>
+		
+		<table>
+			<thead><tr>
+				<th>link, title</th>
+				<th>date</th>
+				<th>type</th>
+				<th>html (raw)</th>
+				<th>html (preview) / poll</th>
+				<th>cmt</th>
+			</tr></thead><tbody>{%for p in site.data.posts%}<tr class="{%cycle 'odd','even'%}">
+				<td class="link-title">
+					<a href="https://www.deviantart.com/a-flyleaf/{{p.link}}">{{p.link}}</a>{%if p.title%}
+					<br><br><b>{{p.title}}</b>{%endif%}
+				</td>
+				<td class="date">
+					<pre>{{p.date|date_to_xmlschema}}</pre>
+					{{p.date|date:"%Y %b %-d, %T %Z"}}
+				</td>
+				<td class="type">
+					{{p.type}}
+				</td>
+				<td class="html-r"><pre>{{p.html
+					|replace:"<","&lt;"
+					|replace:">","&gt;"
+				}}</pre></td>
+				<td class="prev{%if p.type=='poll'%} poll{%endif%}">{%if p.html%}{{p.html
+					|remove:"https://www.deviantart.com/users/outgoing?"
+				}}{%else%}
+					votes: <b>{{p.votes}}</b>
+					<ul>{%for o in p.poll%}<li>opt: <b>{{o.opt}}</b>
+					<br>vp: <b>{{o.vp}}</b>%</li>{%endfor%}</ul>
+				{%endif%}</td>
+				<td class="cmt{%unless p.cmt%} empty{%endunless%}">{%if p.cmt%}
+					<pre>{{p.cmt
+					|replace:"<","&lt;"
+					|replace:">","&gt;"}}</pre>
+					<div class="prev">{{p.cmt}}</div>
+				{%endif%}</td>
+			</tr>{%endfor%}</tbody>
+		</table>
+	</div></details>
 	
-	<p>title links open in a new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
-	
-	<p><b>times are correct</b> & will display as EST on live site; localhost is weird (-4h) for some reason. dw about it.</p>
-	
-	<p>"legacy-journal" has been retroactively applied to <em>all descriptions</em> before ~2024 (starts here with "roundup 2023/02"). I know for a FACT I have HTML in some of the newer descriptions but dA does not reflect this. big F.</p>
-	
-	<table>
-		<thead><tr>
-			<th>link, title</th>
-			<th>date</th>
-			<th>tags</th>
-			<th>desc (raw)</th>
-			<th>desc (HTML)</th>
-			<th>site</th>
-		</tr></thead><tbody>{%for d in site.data.gallery%}<tr class="{%cycle 'odd','even'%}">
-			<td class="link-title">
-				<a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a>
-				<br><br>
-				<b>{{d.title}}</b>
-			</td>
-			<td class="date">
-				<pre>{{d.date|date_to_xmlschema}}</pre>
-				{{d.date|date:"%Y %b %-d, %T %Z"}}
-			</td>
-			<td class="tags">[{%for t in d.tags%}{{t}}{%if forloop.last!=true%}, {%endif%}{%endfor%}]</td>
-			<td class="desc"><pre>{{d.desc
-				|replace:"<","&lt;"
-				|replace:">","&gt;"
-			}}</pre></td>
-			<td class="desc-html{%if d.desc contains '</p>'%} d-new{%endif%}">{{d.desc
-				|remove:"https://www.deviantart.com/users/outgoing?"
-				|remove:"<h2>Description</h2>"
-			}}</td>
-			<td class="site{%unless d.site%} empty{%endunless%}"><a href="https://a-flyleaf.github.io/{{d.site}}">{{d.site}}</a></td>
-		</tr>{%endfor%}</tbody>
-	</table>
+	<details><summary><h2>_data/gallery.yml</h2></summary><div class="dt">
+		<p>lord have mercy. <b>{{site.data.gallery|size}}</b> and counting....</p>
+		
+		<p>title links open in a new tab. minor formatting adjustments made for display purposes. data reflects <em>exactly</em> what's onsite, without regard for link-pruning, altered dates (e.g. stuff uploaded late), and other nitpicky manually-edited stuff that I can edit myself later.</p>
+		
+		<p><b>times are correct</b> & will display as EST on live site; localhost is weird (-4h) for some reason. dw about it.</p>
+		
+		<p>"legacy-journal" has been retroactively applied to <em>all descriptions</em> before ~2024 (starts here with "roundup 2023/02"). I know for a FACT I have HTML in some of the newer descriptions but dA does not reflect this. big F.</p>
+		
+		<table>
+			<thead><tr>
+				<th>link, title</th>
+				<th>date</th>
+				<th>tags</th>
+				<th>writ</th>
+				<th>desc (raw)</th>
+				<th>desc (HTML)</th>
+				<th>site</th>
+			</tr></thead><tbody>{%for d in site.data.gallery%}<tr class="{%cycle 'odd','even'%}">
+				<td class="link-title">
+					<a href="https://www.deviantart.com/a-flyleaf/art/{{d.link}}" target="_blank">{{d.link}}</a>
+					<br><br>
+					<b>{{d.title}}</b>
+				</td>
+				<td class="date">
+					<pre>{{d.date|date_to_xmlschema}}</pre>
+					{{d.date|date:"%Y %b %-d, %T %Z"}}
+				</td>
+				<td class="tags">[{%for t in d.tags%}{{t}}{%if forloop.last!=true%}, {%endif%}{%endfor%}]</td>
+				<td class="writ{%unless d.writ%} empty{%endunless%}">{%if d.writ%}<pre>{{d.writ
+					|replace:"<","&lt;"
+					|replace:">","&gt;"
+				}}</pre>{%endif%}</td>
+				<td class="desc"><pre>{{d.desc
+					|replace:"<","&lt;"
+					|replace:">","&gt;"
+				}}</pre></td>
+				<td class="prev{%if d.desc contains '</p>'%} d-new{%endif%}">{{d.desc
+					|remove:"https://www.deviantart.com/users/outgoing?"
+					|remove:"<h2>Description</h2>"
+				}}</td>
+				<td class="site{%unless d.site%} empty{%endunless%}"><a href="https://a-flyleaf.github.io/{{d.site}}">{{d.site}}</a></td>
+			</tr>{%endfor%}</tbody>
+		</table>
+	</div></details>
 </body>
