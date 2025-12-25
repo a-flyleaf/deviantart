@@ -26,27 +26,11 @@ css: "
 "
 ---
 <p>Sorted automatically by upload order—which <strong>may not</strong> correlate to posting date!</p>
+<p>See <a href="gallery-tag-reference">the tag reference</a> for things you can CTRL+F.</p>
 
 <nav><ul>{%for y in page.years%}<li><a href="#y{{y}}">{{y}}</a></li>{%endfor%}</ul></nav>
 
 {%assign all=site.data.gallery|concat:site.data.posts|sort:"date"%}
-<!--
-quick-n-ugly version; replaced {} with []
-<table>
-	<thead><tr>
-		<th>date</th>
-		<th>link</th>
-		<th>type</th>
-	</tr></thead><tbody>[%for d in all%]<tr>
-		<td>[[d.date|date:"%F %T"]]</td>
-		<td><a href="https://www.deviantart.com/a-flyleaf/[[d.link]]">[%unless d.type%]<b>[%endunless%][%if d.title%][[d.title]][%else%][[d.link
-			|remove:"journal/"
-			|remove:"poll/"
-			|remove:"status-update/"]][%endif%][%unless d.type%]</b>[%endunless%]</a></td>
-		<td>[%if d.type%][[d.type]][%else%]deviation[%endif%]</td>
-	</tr>[%endfor%]</tbody>
-</table>
--->
 
 {%for y in page.years%}<details open id="y{{y}}">
 	<summary open><h2>{{y}}</h2></summary>
@@ -56,3 +40,5 @@ quick-n-ugly version; replaced {} with []
 		</li>{%endif%}{%endfor%}</ul>
 	</div>
 </details>{%endfor%}
+
+<!--would be fun to put stats here idk-->
