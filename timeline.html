@@ -35,7 +35,7 @@ css: "
 {%for y in page.years%}<details open id="y{{y}}">
 	<summary open><h2>{{y}}</h2></summary>
 	<div class="dev">
-		<ul>{%for d in all%}{%capture dt%}{{d.date}}{%endcapture%}{%if dt contains y%}<li{%if d.type%} class="fd"{%endif%}>{{d.date|date:"%b. %e"}} - <a href="https://www.deviantart.com/a-flyleaf/{{d.link}}">{%if d.title%}{%unless d.type=='poll' or d.type=='status'%}<b>{%endunless%}{{d.title}}{%unless d.type=='poll' or d.type=='status'%}</b>{%endunless%}{%else%}&lt;status update&gt;{%endif%}</a>{%if d.type=='poll'%} <small style="text-transform:uppercase;">[{{d.type}}]</small>{%endif%}{%if d.tags%}
+		<ul>{%for d in all%}{%capture dt%}{{d.date}}{%endcapture%}{%if dt contains y%}<li{%if d.type%} class="fd"{%endif%}>{{d.date|date:"%b. %e"}} - <a href="https://www.deviantart.com/a-flyleaf/{%unless d.type%}art/{%endunless%}{{d.link}}">{%if d.title%}{%unless d.type=='poll' or d.type=='status'%}<b>{%endunless%}{{d.title}}{%unless d.type=='poll' or d.type=='status'%}</b>{%endunless%}{%else%}&lt;status update&gt;{%endif%}</a>{%if d.type=='poll'%} <small style="text-transform:uppercase;">[{{d.type}}]</small>{%endif%}{%if d.tags%}
 		<ul class="tags">{%for t in d.tags%}<li><small>{{t}}</small></li>{%endfor%}</ul>{%endif%}
 		</li>{%endif%}{%endfor%}</ul>
 	</div>
