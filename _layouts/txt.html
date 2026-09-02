@@ -10,8 +10,8 @@
 		<style>{{page.css}}</style>{%endif%}
 	</head>
 	<body>
-		<div id="content">{%if page.title%}
-			<header><h1>{{page.title}}</h1></header>{%endif%}
+		<div id="content">
+			<header><h1>{%if page.title%}{{page.title}}{%else%}{{site.name}}{%endif%}</h1></header>
 			<main>{{content}}</main>
 		</div>
 		<footer><a href="https://github.com/a-flyleaf/deviantart/commits/main/{{page.path}}">page commit history</a> | by a-flyleaf/NightAuctor</footer>
