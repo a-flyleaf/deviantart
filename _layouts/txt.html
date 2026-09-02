@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>{%if page.title%}{{page.title}} • {%endif%}NightAuctor/a-flyleaf on deviantArt, but not on deviantArt</title>
+		<title>{%if page.title%}{{page.title}} • {%endif%}{{site.name}}</title>
 		<link rel="stylesheet" type="text/css" href="{%include url.html%}/assets/txt.css"/>{%if page.css%}
 		<style>{{page.css}}</style>{%endif%}
 	</head>
@@ -14,6 +14,6 @@
 			<header><h1>{{page.title}}</h1></header>{%endif%}
 			<main>{{content}}</main>
 		</div>
-		<footer><a href="https://github.com/a-flyleaf/deviantart/commits/main/{{page.path}}">changelog</a> | by a-flyleaf/NightAuctor</footer>
+		<footer><a href="https://github.com/a-flyleaf/deviantart/commits/main/{{page.path}}">page commit history</a> | by a-flyleaf/NightAuctor</footer>
 	</body>
 </html>

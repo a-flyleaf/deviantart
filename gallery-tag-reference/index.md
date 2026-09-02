@@ -133,7 +133,7 @@ Compilations of some sort. Some things got uploaded achronologically, which make
 
 <ul>{%for tag in page.tags.comp%}<li><b>#<a href="https://www.deviantart.com/a-flyleaf/gallery?q=%23{{tag.nm|downcase}}" class="tag">{{tag.nm}}</a></b>{%if tag.desc%}: {{tag.desc}}{%endif%}</li>{%endfor%}</ul>
 
-Art *in* sketchdumps/roundups/summaries may or may not be tagged for individually (i.e.&nbsp;Zero appears in one little doodle in a roundup; whether the roundup is tagged #zero depends entirely on my memory at the time), I am not consistent with it. Maybe someday ¯\\\_(ツ)_/¯
+Art *in* sketchdumps/roundups/summaries may or may not be tagged for individually (i.e.&nbsp;Zero appears in one little doodle in a roundup; whether the roundup is tagged #zero depends entirely on my memory at the time), I am not consistent with it ¯\\\_(ツ)_/¯
 </section>
 
 ----
